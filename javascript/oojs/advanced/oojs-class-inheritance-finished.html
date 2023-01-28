@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>Object-oriented JavaScript inheritance</title>
   </head>
 
@@ -97,7 +98,11 @@
       }
 
       Teacher.prototype = Object.create(Person.prototype);
-      Teacher.prototype.constructor = Teacher;
+      Object.defineProperty(Teacher.prototype, 'constructor', { 
+         value: Teacher, 
+         enumerable: false, // so that it does not appear in 'for in' loop
+         writable: true 
+      });
 
       Teacher.prototype.greeting = function() {
         let prefix;

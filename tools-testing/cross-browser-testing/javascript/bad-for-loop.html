@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html>
+<html lang="en-us">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
     <title>Bad for loop</title>
   </head>
   <body>
     <script>
-      for(let i = 1; i <= 10; i++) {
+      for(var i = 1; i <= 10; i++) {
         const para = document.createElement('p');
         para.textContent = 'This is paragraph ' + i + '.';
         document.body.appendChild(para);
